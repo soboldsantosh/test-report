@@ -28,7 +28,7 @@ jobs:
             set -e  # Exit on error
             cd $REMOTE_DIR
             rm -rf $REMOTE_DIR/venv
-            python3.12 -m venv $REMOTE_DIR/venv
+            python3 -m venv $REMOTE_DIR/venv
             source $REMOTE_DIR/venv/bin/activate
             pip install -r requirements.txt  
             pytest --html=report.html  
