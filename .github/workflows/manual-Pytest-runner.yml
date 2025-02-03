@@ -16,19 +16,6 @@ jobs:
         with:
           python-version: '3.12'
 
-      # Install dependencies (using python as the correct version from setup-python)
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-
-      # Create virtual environment using python (which now points to Python 3.12)
-      - name: Create virtual environment with Python 3.12
-        run: |
-          python -m venv /home/autotest/MERCER/venv  # Use python which now points to 3.12
-          source /home/autotest/MERCER/venv/bin/activate
-          pip install -r requirements.txt
-
       # Run Pytest on VM (this is still using the VM, no changes needed for this)
       - name: Run Pytest on VM
         env:
